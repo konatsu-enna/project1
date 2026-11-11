@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15分鐘偽出國！台中東協廣場特快車導覽</title>
+    <style>
+        /* 全局視覺：熱帶微旅行與登機證風格 */
+        body {
+            font-family: "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+            color: #2b2b2b;
+            background-color: #f4f6f8;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+        /* 頂部橫幅：航空公司/登機證風格 Header */
+        .boarding-header {
+            background: linear-gradient(135deg, #0d5c75, #1989ac);
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .boarding-header h1 {
+            margin: 0;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        .boarding-header p {
+            margin: 8px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* 報導目錄：機票 / 登機證風格選單 */
+        nav {
+            background-color: #ffffff;
+            border: 2px dashed #1989ac;
+            border-top: none;
+            padding: 20px;
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        nav strong {
+            color: #0d5c75;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 12px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+        }
+        nav a {
+            color: #0d5c75;
+            background-color: #eaf5f8;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #bce1ec;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            background-color: #0d5c75;
+            color: #ffffff;
+        }
+
+        /* 區塊標題 */
+        h2 {
+            color: #0d5c75;
+            font-size: 1.4em;
+            border-left: 6px solid #e67e22; /* 熱帶橘 */
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* 行李標籤風格清單（散步順序） */
+        .boarding-route {
+            list-style: none;
+            padding-left: 0;
+        }
+        .boarding-route li {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1989ac;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .boarding-route strong {
+            color: #d35400;
+            font-size: 1.1em;
+        }
+
+        /* 比較表風格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background-color: #0d5c75;
+            color: #ffffff;
+        }
+
+        /* 照片卡片風格 */
+        .photo-card {
+            background-color: #ffffff;
+            padding: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+        }
+        .img-caption {
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* RWD 影片與 Google 地圖容器 */
+        .responsive-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .responsive-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* 資料來源 */
+        .source-list a {
+            color: #1989ac;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .source-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部橫幅：航班登記卡意象 -->
+    <div class="boarding-header">
+        <h1>✈️ 15分鐘偽出國！台中東協廣場特快車</h1>
+        <p>不用護照、不搭飛機！搭火車到台中實現東南亞微旅行</p>
+    </div>
+
+    <!-- 報導目錄 (登機證風格選單) -->
+    <nav>
+        <strong>【 ✈️ 航班導覽目錄 】</strong>
+        <ul>
+            <li><a href="http://konatsu.infinityfree.me/#intro">1. 航向東協廣場</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#route">2. 登機與微旅行順序</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#comparison">3. 出國體驗比較表</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#photos">4. 異國風情大片</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#video">5. 實境開箱報導</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#map">6. 目的地 Google 地圖</a></li>
+            <li><a href="http://konatsu.infinityfree.me/#source">7. 資料來源</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. 簡介 -->
+    <h2 id="intro">一、航向東協廣場（簡介）</h2>
+    <p>東協廣場（前身為「台中第一廣場」，俗稱「一廣」）位於台中市中區綠川西街，鄰近台中火車站。這座複合式商場大樓承載了台中早期市區繁榮的歷史記憶。</p>
+    <p>隨著商業重心轉移與都市計畫更迭，第一廣場歷經轉型，如今已成為全台灣最具規模的東南亞多元文化與移工社群樞紐，聚集了許多東南亞餐廳、特色超市與服飾店，被譽為「台中的小東南亞」。不用買機票，在這裡就能體驗最道地的東南亞跨國風情！</p>
+
+    <!-- 2. 景點特色與散步順序 -->
+    <h2 id="route">二、登機與微旅行順序</h2>
+    <p>跟著這條「過境路線」，展開您的台中偽出國一日遊：</p>
+    <ol class="boarding-route">
+        <li>
+            <strong>Check-in 第一站：綠川水岸親水廊道</strong><br>
+            從台中火車站步行出發，沿著整治後的綠川水岸散步，欣賞造景與綠化親水空間，享受偽歐洲河岸般的漫步氛圍。
+        </li>
+        <li>
+            <strong>入境大廳 第二站：東協廣場金字塔入口</strong><br>
+            抵達廣場門口著名的金字塔地標，每逢週末此處聚集許多東南亞新住民與移工，彷彿瞬間步入東南亞城市的中央廣場。
+        </li>
+        <li>
+            <strong>異國超市 第三站：商場內部特色店家與超市</strong><br>
+            深入大樓內部，探索東南亞超市買齊越式咖啡、印尼泡麵與各式熱帶調味料，並品嚐道地的越南法國麵包、印尼牛肉湯與泰式奶茶。
+        </li>
+        <li>
+            <strong>周邊漫遊 第四站：繼光街商圈與周邊老店</strong><br>
+            走出東協廣場延伸至繼光街，造訪周邊傳統老店與歷史建築，體驗古今與台味交織的舊城風貌。
+        </li>
+    </ol>
+
+    <!-- 3. 景點比較表 -->
+    <h2 id="comparison">三、周邊景點出國體驗比較表</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>景點名稱</th>
+                <th>風格與特色</th>
+                <th>核心亮點</th>
+                <th>偽出國指數</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>東協廣場</strong></td>
+                <td>東南亞跨國風</td>
+                <td>東南亞美食、特色超市、多元文化體驗</td>
+                <td>★★★★★</td>
+            </tr>
+            <tr>
+                <td><strong>綠川水岸親水廊道</strong></td>
+                <td>日系都市水岸風</td>
+                <td>親水步道、造景橋樑、夜間燈光秀</td>
+                <td>★★★☆☆</td>
+            </tr>
+            <tr>
+                <td><strong>宮原眼科</strong></td>
+                <td>復古英倫歷史風</td>
+                <td>日治時期古蹟建築、知名冰淇淋與糕點禮盒</td>
+                <td>★★★★☆</td>
+            </tr>
+            <tr>
+                <td><strong>繼光街商圈</strong></td>
+                <td>傳統在地台味風</td>
+                <td>繼光香香雞發源地、傳統布莊與在地小吃</td>
+                <td>★★☆☆☆</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 4. 照片 -->
+    <h2 id="photos">四、異國風情大片（照片）</h2>
+    <div class="photo-card">
+        <img src="4582.jpg" alt="東協廣場道地越式美食與配菜">
+        <p class="img-caption">📸 東協廣場內部道地越南河粉與新鮮香草配菜</p>
+    </div>
+    <div class="photo-card">
+        <img src="4734.jpg" alt="綠川水岸景致">
+        <p class="img-caption">📸 東協廣場旁的綠川水岸親水廊道景致</p>
+    </div>
+
+    <!-- 5. 影音報導 -->
+    <h2 id="video">五、實境開箱報導（影片）</h2>
+    <p>揭開台中「東協廣場」步行出國的神秘面紗！都市傳說大揭秘！【舊舊的奇幻冒險】：</p>
+    <div class="responsive-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QZ0nIZ2SUYE?si=eKQYUklGrAeguNGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- 6. Google 地圖 -->
+    <h2 id="map">六、目的地定位（Google 地圖）</h2>
+    <p>東協廣場位置（台中市中區綠川西街135號，由火車站步行約 5 分鐘抵達）：</p>
+    <div class="responsive-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.893116962386!2d120.68164037604313!3d24.1370213784084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d14f494bc3b%3A0xb3ca97072a392289!2z東協廣場!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- 7. 資料來源 -->
+    <h2 id="source">七、資料來源</h2>
+    <ul class="source-list">
+        <li><a href="https://travel.taichung.gov.tw/" target="_blank">台中觀光旅遊網 - 景點介紹</a></li>
+        <li><a href="https://zh.wikipedia.org/wiki/東協廣場" target="_blank">維基百科 - 東協廣場歷史與沿革</a></li>
+        <li><a href="https://memory.culture.tw/" target="_blank">國家文化記憶庫 - 第一廣場轉型歷史紀錄</a></li>
+    </ul>
+
+</body>
+</html>
